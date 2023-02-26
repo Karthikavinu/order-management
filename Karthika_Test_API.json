@@ -1,0 +1,460 @@
+{
+	"info": {
+		"_postman_id": "8849182e-6049-4038-a472-250c21f2c744",
+		"name": "Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8000/users/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"first_name\": \"Vinu\",\n  \"last_name\": \"John\",\n  \"email\": \"vinujohn@gmail.com\",\n  \"password\": \"Joshu@123\",\n  \"phone\": \"+1289007400\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/users/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/users/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"vinujohn@gmail.com\",\n    \"password\": \"Joshu@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/placeorder",
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": [
+						{
+							"key": "algorithm",
+							"value": "HS256",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "payload",
+							"value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImthdGh1NTQyMEBnbWFpbC5jb20iLCJGaXJzdF9OYW1lIjoiS2FydGhpa2EiLCJMYXN0X05hbWUiOiJWaW51IiwiVWlkIjoiNjNmODNmNWRlOTE5NzEzNjY1MTc4MzNiIiwiZXhwIjoxNjc3Mjk5OTMzfQ.Pp5rvyZVn7rGw7DoenLmA0CzzASFiefioAEBLH24Dqs\"",
+							"type": "string"
+						},
+						{
+							"key": "isSecretBase64Encoded",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "queryParamKey",
+							"value": "token",
+							"type": "string"
+						},
+						{
+							"key": "header",
+							"value": "{}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InZpbnVqb2huQGdtYWlsLmNvbSIsIkZpcnN0X05hbWUiOiJWaW51IiwiTGFzdF9OYW1lIjoiSm9obiIsIlVpZCI6InZpbnVqb2huQGdtYWlsLmNvbSIsImV4cCI6MTY3NzQzNTMxNn0.A7OyOOgeWN77_z4p8_5-o59QMy1gM6jCLeQfJxvDvbE",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product_list\": [\n        \"Pants\",\n        \"Shirt\",\n        \"cap\"\n    ],\n    \"user_id\": \"vinujohn@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/placeorder",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"placeorder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/placeorder",
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": [
+						{
+							"key": "algorithm",
+							"value": "HS256",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "payload",
+							"value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImthdGh1NTQyMEBnbWFpbC5jb20iLCJGaXJzdF9OYW1lIjoiS2FydGhpa2EiLCJMYXN0X05hbWUiOiJWaW51IiwiVWlkIjoiNjNmODNmNWRlOTE5NzEzNjY1MTc4MzNiIiwiZXhwIjoxNjc3Mjk5OTMzfQ.Pp5rvyZVn7rGw7DoenLmA0CzzASFiefioAEBLH24Dqs\"",
+							"type": "string"
+						},
+						{
+							"key": "isSecretBase64Encoded",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "queryParamKey",
+							"value": "token",
+							"type": "string"
+						},
+						{
+							"key": "header",
+							"value": "{}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InZpbnVqb2huQGdtYWlsLmNvbSIsIkZpcnN0X05hbWUiOiJWaW51IiwiTGFzdF9OYW1lIjoiSm9obiIsIlVpZCI6InZpbnVqb2huQGdtYWlsLmNvbSIsImV4cCI6MTY3NzQzNTMxNn0.A7OyOOgeWN77_z4p8_5-o59QMy1gM6jCLeQfJxvDvbE",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product_list\": [\n        \"Pants\",\n        \"Shirt\",\n        \"cap\",\n        \"Pants\",\n        \"socks\",\n        \"shoes\"\n    ],\n    \"user_id\": \"vinujohn@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/placeorder",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"placeorder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/getorder",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": [
+						{
+							"key": "algorithm",
+							"value": "HS256",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "payload",
+							"value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImthdGh1NTQyMEBnbWFpbC5jb20iLCJGaXJzdF9OYW1lIjoiS2FydGhpa2EiLCJMYXN0X05hbWUiOiJWaW51IiwiVWlkIjoiNjNmODNmNWRlOTE5NzEzNjY1MTc4MzNiIiwiZXhwIjoxNjc3Mjk5OTMzfQ.Pp5rvyZVn7rGw7DoenLmA0CzzASFiefioAEBLH24Dqs\"",
+							"type": "string"
+						},
+						{
+							"key": "isSecretBase64Encoded",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "queryParamKey",
+							"value": "token",
+							"type": "string"
+						},
+						{
+							"key": "header",
+							"value": "{}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InZpbnVqb2huQGdtYWlsLmNvbSIsIkZpcnN0X05hbWUiOiJWaW51IiwiTGFzdF9OYW1lIjoiSm9obiIsIlVpZCI6InZpbnVqb2huQGdtYWlsLmNvbSIsImV4cCI6MTY3NzQzNTMxNn0.A7OyOOgeWN77_z4p8_5-o59QMy1gM6jCLeQfJxvDvbE",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"order_id\": \"63fa516393e3052904b823b4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/getorder",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"getorder"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/getallorders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": [
+						{
+							"key": "algorithm",
+							"value": "HS256",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "payload",
+							"value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImthdGh1NTQyMEBnbWFpbC5jb20iLCJGaXJzdF9OYW1lIjoiS2FydGhpa2EiLCJMYXN0X05hbWUiOiJWaW51IiwiVWlkIjoiNjNmODNmNWRlOTE5NzEzNjY1MTc4MzNiIiwiZXhwIjoxNjc3Mjk5OTMzfQ.Pp5rvyZVn7rGw7DoenLmA0CzzASFiefioAEBLH24Dqs\"",
+							"type": "string"
+						},
+						{
+							"key": "isSecretBase64Encoded",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "queryParamKey",
+							"value": "token",
+							"type": "string"
+						},
+						{
+							"key": "header",
+							"value": "{}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InZpbnVfam9obkBnbWFpbC5jb20iLCJGaXJzdF9OYW1lIjoiVmludSIsIkxhc3RfTmFtZSI6IkpvaG4iLCJVaWQiOiJ2aW51X2pvaG5AZ21haWwuY29tIiwiZXhwIjoxNjc3Mzk2OTU3fQ.XD5AAgc63onGKkoJEqPTRkvSHzr9sv1aA-INESpbmRM",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"vinu_john@outlook.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/getallorders",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"getallorders"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/getallorders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": [
+						{
+							"key": "algorithm",
+							"value": "HS256",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "payload",
+							"value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6ImthdGh1NTQyMEBnbWFpbC5jb20iLCJGaXJzdF9OYW1lIjoiS2FydGhpa2EiLCJMYXN0X05hbWUiOiJWaW51IiwiVWlkIjoiNjNmODNmNWRlOTE5NzEzNjY1MTc4MzNiIiwiZXhwIjoxNjc3Mjk5OTMzfQ.Pp5rvyZVn7rGw7DoenLmA0CzzASFiefioAEBLH24Dqs\"",
+							"type": "string"
+						},
+						{
+							"key": "isSecretBase64Encoded",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "queryParamKey",
+							"value": "token",
+							"type": "string"
+						},
+						{
+							"key": "header",
+							"value": "{}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InZpbnVqb2huQGdtYWlsLmNvbSIsIkZpcnN0X05hbWUiOiJWaW51IiwiTGFzdF9OYW1lIjoiSm9obiIsIlVpZCI6InZpbnVqb2huQGdtYWlsLmNvbSIsImV4cCI6MTY3NzQzNTMxNn0.A7OyOOgeWN77_z4p8_5-o59QMy1gM6jCLeQfJxvDvbE",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": \"vinujohn@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/getallorders",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"getallorders"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
